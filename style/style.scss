@@ -1,0 +1,212 @@
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin border-bottom {
+  border-bottom: 1px solid black;
+  padding-bottom: 2rem;
+}
+
+@mixin standard-padding {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+}
+
+.html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  font-family: Arial, Helvetica;
+}
+
+.all {
+  padding: 2rem;
+  height: 100vh;
+  width: 70vw;
+  margin: auto;
+}
+
+.header {
+  @include flex-row;
+  justify-content: space-between;
+  @include border-bottom;
+  .nav {
+    @include flex-row;
+    justify-content: space-between;
+    width: 43rem;
+  }
+}
+
+.titles {
+  @include flex-row;
+  justify-content: space-between;
+  @include border-bottom;
+}
+
+.main {
+  @include flex-row;
+  justify-content: center;
+  @include border-bottom;
+
+  .thumbnails {
+    @include flex-column;
+    justify-content: space-around;
+    height: 80rem;
+    @include standard-padding;
+
+    .thumbnail {
+      height: 4rem;
+      width: 6rem;
+      background-color: aqua;
+    }
+  }
+
+  &__column {
+    width: 22rem;
+    @include standard-padding;
+  }
+
+  &__wide {
+    @include flex-column;
+    @include standard-padding;
+    max-width: 60%;
+
+    .top {
+      @include flex-column;
+      @include border-bottom;
+      justify-content: space-between;
+      height: 36rem;
+
+      .img__container {
+        @include flex-column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        height: 30rem;
+        width: 50rem;
+        background-image: url(img/reeve.jpg);
+        background-position: center;
+        background-size: cover;
+
+        .caption {
+          margin-left: 2rem;
+          margin-bottom: 3rem;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2rem;
+          width: 25rem;
+          background-color: white;
+        }
+
+        .play_btn {
+          height: 6rem;
+          width: 6rem;
+        }
+      }
+    }
+    .middle {
+      padding-top: 2rem;
+      height: 15rem;
+      @include border-bottom;
+
+      .title {
+        padding-bottom: 2rem;
+      }
+
+      .videos__container {
+        @include flex-row;
+        justify-content: space-between;
+        height: 12rem;
+
+        .video__container {
+          @include flex-column;
+          justify-content: space-between;
+          height: 12rem;
+          width: 10rem;
+        }
+
+        .video {
+          position: relative;
+          height: 8rem;
+          width: 10rem;
+          background-color: black;
+
+          .caption {
+            height: 1rem;
+            width: 2.5rem;
+            background-color: white;
+            margin-top: 0.5rem;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .view__more {
+          height: 12rem;
+          width: 10rem;
+          @include flex-column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    padding-top: 2rem;
+    height: 42rem;
+
+    .title {
+      padding-bottom: 2rem;
+    }
+
+    .videos__container {
+      @include flex-row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .video__container {
+        @include flex-column();
+        justify-content: space-between;
+        height: 20rem;
+        width: 22rem;
+      }
+
+      .video {
+        position: relative;
+        height: 16rem;
+        width: 20rem;
+        background-color: black;
+
+        .caption {
+          height: 2rem;
+          width: 6rem;
+          background-color: white;
+          margin-top: 0.5rem;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    .view__more {
+      height: 20rem;
+      width: 22rem;
+      @include flex-column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
