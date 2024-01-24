@@ -5,47 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Secure Site</title>
     <link rel="stylesheet" href="style/style.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Merriweather+Sans:wght@400;700;800&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="all">
       <header class="header">
-        <h3>Climate Confrence UK</h3>
+        <h3 class="title">Climate Confrence UK</h3>
         <nav class="nav">
-          <a href="#">Home</a>
+          <a href="#">
+            <div class="globe"></div>
+            Home</a
+          >
           <a href="#">Thanks to...</a>
           <a href="#">About</a>
-          <a href="#">Stay Up To Date</a>
-          <a href="#">Join the Cause</a>
-          <a href="#">Become a Contributer</a>
+          <a class="boxed" href="#">Stay Up To Date</a>
+          <a class="boxed" href="#">Join the Cause</a>
+          <a class="boxed" href="#">Become a Contributer</a>
         </nav>
       </header>
       <div class="titles">
         <h1 class="title">Poulations & Future Generations</h1>
-        <div class="title_next">
-          <p>Up Next</p>
+        <div class="title__next">
+          <p class="up-next">Up Next</p>
           <p>Social & Political</p>
         </div>
       </div>
       <div class="main">
         <div class="thumbnails">
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
+          <div class="container"><div class="thumbnail pointer"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail family"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail"></div></div>
+          <div class="container"><div class="thumbnail trophy"></div></div>
         </div>
         <div class="main__column">
-          <div class="column__top">
-            <h3>What's All This About?</h3>
+          <div class="top">
+            <h3 class="heading">What's All This About?</h3>
             <p class="text">
               There were 3.6 billion people in the world in 1970, 50 years later
               in 2020, the population has more than doubled to over 7.5 billion.
@@ -67,20 +76,19 @@
               that is quickly becoming uninhabitable to them. <br />
             </p>
           </div>
-          <div class="column__bottom">
-            <h3>What Can I Do?</h3>
+          <div class="bottom">
+            <h3 class="heading">What Can I Do?</h3>
             <ol class="list">
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem, ipsum dolor.</li>
+              <li class="item"><strong>Lorem, ipsum dolor.</strong></li>
+              <li class="item"><strong>Lorem, ipsum dolor.</strong></li>
+              <li class="item"><strong>Lorem, ipsum dolor.</strong></li>
+              <li class="item"><strong>Lorem, ipsum dolor.</strong></li>
             </ol>
           </div>
         </div>
         <div class="main__wide">
           <div class="top">
-            <h3>The Latest 2021 Q3 Update Now In</h3>
+            <h3 class="heading">The Latest &middot; 2021 Q3 Update Now In</h3>
             <div class="img__container">
               <img
                 class="play_btn"
@@ -100,26 +108,30 @@
           </div>
 
           <div class="middle">
-            <h3 class="title">Past Updates</h3>
+            <h3 class="heading">Past Updates</h3>
 
             <div class="videos__container">
               <div class="video__container">
                 <div class="video">
                   <div class="caption"></div>
                 </div>
-                <p>Emma Watson gets serious to kick off 2021</p>
+                <a><p>Emma Watson gets serious to kick off 2021</p></a>
               </div>
               <div class="video__container">
                 <div class="video">
                   <div class="caption"></div>
                 </div>
-                <p>Joanna Lumley consectetur adipiscing elit iaculis vitae</p>
+                <a>
+                  <p>
+                    Joanna Lumley consectetur adipiscing elit iaculis vitae
+                  </p></a
+                >
               </div>
               <div class="video__container">
                 <div class="video">
                   <div class="caption"></div>
                 </div>
-                <p>Lorem ipsum dolor sit amet</p>
+                <a><p>Lorem ipsum dolor sit amet</p></a>
               </div>
               <div class="view__more">
                 <img src="style/img/green_arrow.png" alt="view more arrow" />
@@ -128,24 +140,29 @@
             </div>
           </div>
           <div class="bottom">
-            <h3 class="title">Discussion & Investigation</h3>
+            <h3 class="heading">Discussion & Investigation</h3>
             <div class="videos__container">
               <div class="video__container">
                 <div class="video">
                   <div class="caption"></div>
                 </div>
-                <p>
-                  Biodiversity Loss Will Harm Humans Too: An Australian Example
-                </p>
+                <a>
+                  <p>
+                    Biodiversity Loss Will Harm Humans Too: An Australian
+                    Example
+                  </p>
+                </a>
               </div>
               <div class="video__container">
                 <div class="video">
                   <div class="caption"></div>
                 </div>
-                <p>
-                  Cheaper & Greener: Wind Farms Can Power 1000s Of Homes, In The
-                  Right Conditions
-                </p>
+                <a>
+                  <p>
+                    Cheaper & Greener: Wind Farms Can Power 1000s Of Homes, In
+                    The Right Conditions
+                  </p>
+                </a>
               </div>
               <div class="video__container">
                 <div class="video">
@@ -156,6 +173,7 @@
                   Our Oxygen Supply
                 </p>
               </div>
+
               <div class="view__more">
                 <img src="style/img/green_arrow.png" alt="view more arrow" />
                 <p>View<br />More</p>

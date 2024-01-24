@@ -18,6 +18,12 @@
   padding-bottom: 2rem;
   padding-right: 2rem;
 }
+@mixin link-hover {
+  text-decoration: underline;
+  cursor: url("/style/img/icons8-finger-up-48.png"), auto;
+}
+
+$my_aqua: #339999;
 
 .html {
   box-sizing: border-box;
@@ -29,7 +35,7 @@
   padding: 0;
   margin: 0;
   box-sizing: inherit;
-  font-family: Arial, Helvetica;
+  font-family: "Inter", sans-serif, Arial;
 }
 
 .all {
@@ -39,14 +45,43 @@
   margin: auto;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    @include link-hover;
+  }
+}
+
 .header {
   @include flex-row;
   justify-content: space-between;
   @include border-bottom;
+  .title {
+    font-size: 36px;
+  }
   .nav {
     @include flex-row;
     justify-content: space-between;
-    width: 43rem;
+    width: 48rem;
+
+    a {
+      @include flex-column;
+      justify-content: center;
+    }
+
+    .boxed {
+      border: black solid 2px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      &:hover {
+        background-color: black;
+        color: white;
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -54,6 +89,26 @@
   @include flex-row;
   justify-content: space-between;
   @include border-bottom;
+  padding-top: 2rem;
+  align-items: flex;
+  .title {
+    font-size: 52px;
+    color: $my_aqua;
+  }
+  .title__next {
+    font-size: 24px;
+    color: #993333;
+    width: 15rem;
+    text-align: right;
+    .up-next {
+      font-size: 32px;
+      font-weight: 900;
+      color: black;
+    }
+    &:hover {
+      @include link-hover;
+    }
+  }
 }
 
 .main {
@@ -61,28 +116,102 @@
   justify-content: center;
   @include border-bottom;
 
+  .heading {
+    font-size: 26px;
+    color: $my_aqua;
+    padding-bottom: 1rem;
+  }
+
   .thumbnails {
     @include flex-column;
     justify-content: space-around;
     height: 80rem;
     @include standard-padding;
 
-    .thumbnail {
-      height: 4rem;
-      width: 6rem;
-      background-color: aqua;
+    .container {
+      height: 5rem;
+      width: 7rem;
+      border: black solid 2px;
+      @include flex-column;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: $my_aqua;
+        cursor: url("/style/img/icons8-finger-up-48.png"), auto;
+      }
+      .thumbnail {
+        height: 4rem;
+        width: 6rem;
+        background-image: url("/style/img/world.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+          background-image: url("/style/img/world-white.png");
+        }
+      }
+
+      .family {
+        background-image: url("/style/img/family1.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+          background-color: $my_aqua;
+          background-image: url("/style/img/family.png");
+          cursor: url("/style/img/icons8-finger-up-48.png"), auto;
+        }
+      }
+
+      .pointer {
+        background-image: url("/style/img/pointer-right.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+          background-image: url("/style/img/pointer-right.png");
+          background-color: $my_aqua;
+          cursor: url("/style/img/icons8-finger-up-48.png"), auto;
+        }
+      }
+      .trophy {
+        background-image: url("/style/img/trophy.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+          background-image: url("/style/img/trophy-white.png");
+          background-color: $my_aqua;
+          cursor: url("/style/img/icons8-finger-up-48.png"), auto;
+        }
+      }
     }
   }
 
   &__column {
     width: 22rem;
     @include standard-padding;
+
+    .bottom {
+      .list {
+        padding-left: 1.5rem;
+
+        .item {
+          margin-top: 2rem;
+        }
+      }
+    }
   }
 
   &__wide {
     @include flex-column;
     @include standard-padding;
-    max-width: 60%;
+    max-width: 58%;
 
     .top {
       @include flex-column;
@@ -95,21 +224,32 @@
         position: relative;
         justify-content: center;
         align-items: center;
-        height: 30rem;
-        width: 50rem;
+        height: 32rem;
+        width: 51rem;
         background-image: url(img/reeve.jpg);
         background-position: center;
         background-size: cover;
 
         .caption {
+          @include flex-column;
+          justify-content: center;
+          text-align: left;
+          font-size: 26px;
           margin-left: 2rem;
           margin-bottom: 3rem;
           position: absolute;
           bottom: 0;
           left: 0;
-          height: 2rem;
-          width: 25rem;
+          height: 5rem;
+          width: 40rem;
           background-color: white;
+          padding: 2px;
+          font-weight: 600;
+
+          em {
+            font-style: normal;
+            color: $my_aqua;
+          }
         }
 
         .play_btn {
@@ -120,22 +260,18 @@
     }
     .middle {
       padding-top: 2rem;
-      height: 15rem;
+      height: 18rem;
       @include border-bottom;
-
-      .title {
-        padding-bottom: 2rem;
-      }
 
       .videos__container {
         @include flex-row;
         justify-content: space-between;
-        height: 12rem;
+        height: 15rem;
 
         .video__container {
           @include flex-column;
-          justify-content: space-between;
-          height: 12rem;
+          // justify-content: space-between;
+          height: 15rem;
           width: 10rem;
         }
 
@@ -144,6 +280,7 @@
           height: 8rem;
           width: 10rem;
           background-color: black;
+          margin-bottom: 1.5rem;
 
           .caption {
             height: 1rem;
@@ -160,6 +297,10 @@
           @include flex-column;
           justify-content: center;
           align-items: center;
+
+          &:hover {
+            @include link-hover;
+          }
         }
       }
     }
@@ -167,7 +308,7 @@
 
   .bottom {
     padding-top: 2rem;
-    height: 42rem;
+    height: 44rem;
 
     .title {
       padding-bottom: 2rem;
@@ -183,6 +324,7 @@
         justify-content: space-between;
         height: 20rem;
         width: 22rem;
+        margin-bottom: 1.5rem;
       }
 
       .video {
@@ -207,6 +349,10 @@
       @include flex-column;
       justify-content: center;
       align-items: center;
+
+      &:hover {
+        @include link-hover;
+      }
     }
   }
 }
