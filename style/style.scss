@@ -58,13 +58,34 @@ a {
   @include flex-row;
   justify-content: space-between;
   @include border-bottom;
+
+  @media (max-width: 1607px) {
+    @include flex-column;
+  }
+  @media (max-width: 1110px) {
+    @include flex-row;
+  }
   .title {
-    font-size: 36px;
+    font-size: 32px;
+    @media (max-width: 1607px) {
+      padding-bottom: 2rem;
+    }
   }
   .nav {
     @include flex-row;
     justify-content: space-between;
     width: 48rem;
+    @media (max-width: 1110px) {
+      display: none;
+    }
+
+    .img-container {
+      height: 2rem;
+      width: 2rem;
+      background-image: url("/style/img/earth-1303628_640.png");
+      background-size: contain;
+      background-position: center;
+    }
 
     a {
       @include flex-column;
@@ -73,14 +94,26 @@ a {
 
     .boxed {
       border: black solid 2px;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: 2%;
+      padding-right: 2%;
+      max-height: 2rem;
 
       &:hover {
         background-color: black;
         color: white;
         text-decoration: none;
       }
+    }
+  }
+  .burger-menu {
+    @media (min-width: 1110px) {
+      display: none;
+    }
+    .line {
+      width: 35px;
+      height: 5px;
+      background-color: black;
+      margin: 6px 0;
     }
   }
 }
@@ -90,18 +123,18 @@ a {
   justify-content: space-between;
   @include border-bottom;
   padding-top: 2rem;
-  align-items: flex;
+  align-items: center;
   .title {
-    font-size: 52px;
+    font-size: 38px;
     color: $my_aqua;
   }
   .title__next {
-    font-size: 24px;
+    font-size: 18px;
     color: #993333;
     width: 15rem;
     text-align: right;
     .up-next {
-      font-size: 32px;
+      font-size: 26px;
       font-weight: 900;
       color: black;
     }
@@ -116,8 +149,12 @@ a {
   justify-content: center;
   @include border-bottom;
 
+  @media (max-width: 1110px) {
+    @include flex-column;
+  }
+
   .heading {
-    font-size: 26px;
+    font-size: 20px;
     color: $my_aqua;
     padding-bottom: 1rem;
   }
@@ -127,6 +164,10 @@ a {
     justify-content: space-around;
     height: 80rem;
     @include standard-padding;
+
+    @media (max-width: 1110px) {
+      display: none;
+    }
 
     .container {
       height: 5rem;
@@ -196,6 +237,9 @@ a {
   &__column {
     width: 22rem;
     @include standard-padding;
+    @media (max-width: 1110px) {
+      width: 100%;
+    }
 
     .bottom {
       .list {
@@ -211,13 +255,16 @@ a {
   &__wide {
     @include flex-column;
     @include standard-padding;
-    max-width: 58%;
+    width: 58%;
+    @media (max-width: 1110px) {
+      width: 100%;
+    }
 
     .top {
       @include flex-column;
       @include border-bottom;
       justify-content: space-between;
-      height: 36rem;
+      height: 25%;
 
       .img__container {
         @include flex-column;
@@ -225,7 +272,7 @@ a {
         justify-content: center;
         align-items: center;
         height: 32rem;
-        width: 51rem;
+        width: 100%;
         background-image: url(img/reeve.jpg);
         background-position: center;
         background-size: cover;
@@ -234,16 +281,17 @@ a {
           @include flex-column;
           justify-content: center;
           text-align: left;
-          font-size: 26px;
+          font-size: 24px;
           margin-left: 2rem;
           margin-bottom: 3rem;
           position: absolute;
           bottom: 0;
           left: 0;
-          height: 5rem;
-          width: 40rem;
+
+          width: 80%;
           background-color: white;
-          padding: 2px;
+          padding-left: 1rem;
+          padding-right: 1rem;
           font-weight: 600;
 
           em {
@@ -260,19 +308,35 @@ a {
     }
     .middle {
       padding-top: 2rem;
-      height: 18rem;
       @include border-bottom;
+
+      .headings {
+        @include flex-row();
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 2rem;
+
+        .view__more-arrow {
+          @media (min-width: 1700px) {
+            display: none;
+          }
+        }
+      }
 
       .videos__container {
         @include flex-row;
+        flex-wrap: wrap;
         justify-content: space-between;
-        height: 15rem;
+
+        @media (max-width: 720px) {
+          display: none;
+        }
 
         .video__container {
           @include flex-column;
-          // justify-content: space-between;
           height: 15rem;
           width: 10rem;
+          max-width: 28%;
         }
 
         .video {
@@ -282,12 +346,23 @@ a {
           background-color: black;
           margin-bottom: 1.5rem;
 
+          @media (max-width: 1300px) {
+            height: 6rem;
+            width: 8rem;
+          }
+
+          @media (max-width: 1110px) {
+            height: 9rem;
+            width: 11rem;
+          }
+
           .caption {
-            height: 1rem;
             width: 2.5rem;
             background-color: white;
             margin-top: 0.5rem;
             margin-left: 0.5rem;
+            font-size: 9px;
+            text-align: center;
           }
         }
 
@@ -297,6 +372,10 @@ a {
           @include flex-column;
           justify-content: center;
           align-items: center;
+
+          @media (max-width: 1700px) {
+            display: none;
+          }
 
           &:hover {
             @include link-hover;
@@ -308,23 +387,39 @@ a {
 
   .bottom {
     padding-top: 2rem;
-    height: 44rem;
+    width: 100%;
 
-    .title {
+    .headings {
+      @include flex-row();
+      justify-content: space-between;
+      align-items: center;
       padding-bottom: 2rem;
+
+      .view__more-arrow {
+        @media (min-width: 1700px) {
+          display: none;
+        }
+      }
     }
 
     .videos__container {
       @include flex-row;
       justify-content: space-between;
       flex-wrap: wrap;
+      @media (max-width: 1110px) {
+        @include flex-column;
+      }
 
       .video__container {
         @include flex-column();
         justify-content: space-between;
         height: 20rem;
-        width: 22rem;
-        margin-bottom: 1.5rem;
+        margin: 1.5rem;
+        width: 20rem;
+
+        @media (max-width: 1110px) {
+          width: 100%;
+        }
       }
 
       .video {
@@ -334,13 +429,19 @@ a {
         background-color: black;
 
         .caption {
-          height: 2rem;
-          width: 6rem;
+          width: fit-content;
           background-color: white;
           margin-top: 0.5rem;
           margin-left: 0.5rem;
+          padding: 8px;
         }
       }
+
+      // .slug {
+      //   // @media (max-width: 1110px) {
+      //   //   max-width: 40%;
+      //   // }
+      // }
     }
 
     .view__more {
@@ -353,6 +454,69 @@ a {
       &:hover {
         @include link-hover;
       }
+      @media (max-width: 1700px) {
+        display: none;
+      }
     }
+    .nav-boxes {
+      @include flex-row;
+      justify-content: space-between;
+
+      img {
+        width: 8%;
+      }
+
+      .top {
+        @include flex-row;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 3.5rem;
+        border: black solid 2px;
+        padding: 0;
+
+        .content {
+          @include flex-row;
+          align-items: center;
+          justify-content: space-between;
+          width: 70%;
+        }
+      }
+
+      .next {
+        @include flex-row;
+        justify-content: space-around;
+        border: black solid 2px;
+        width: 25%;
+        align-items: center;
+        // padding-left: 1rem;
+
+        img {
+          width: 18%;
+        }
+        .up-next {
+          @include flex-column;
+
+          font-size: 22px;
+
+          .red {
+            color: #993333;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+} //end of main
+
+.footer {
+  font-size: small;
+  @include flex-row;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 1rem;
+
+  .tag {
+    width: 18rem;
   }
 }
