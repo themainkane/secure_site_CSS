@@ -1,0 +1,57 @@
+@import "components";
+
+.main__wide {
+  @include flex-column;
+  @include standard-padding;
+  width: 58%;
+  @media (max-width: 1110px) {
+    width: 100%;
+  }
+
+  .top {
+    @include flex-column;
+    @include border-bottom;
+    justify-content: space-between;
+    height: 25%;
+
+    .img__container {
+      @include flex-column;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: 32rem;
+      width: 100%;
+      background-image: url(img/reeve.jpg);
+      background-position: center;
+      background-size: cover;
+
+      .caption {
+        @include flex-column;
+        justify-content: center;
+        text-align: left;
+        font-size: 24px;
+        margin-left: 2rem;
+        margin-bottom: 3rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 80%;
+        background-color: white;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-weight: 600;
+
+        em {
+          font-style: normal;
+          color: $my_aqua;
+        }
+      }
+
+      .play_btn {
+        height: 6rem;
+        width: 6rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import "components";
+
+.middle {
+  padding-top: 2rem;
+  @include border-bottom;
+
+  .headings {
+    @include flex-row();
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+
+    .view__more-arrow {
+      @media (min-width: 1700px) {
+        display: none;
+      }
+    }
+  }
+
+  .videos__container {
+    @include flex-row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 720px) {
+      display: none;
+    }
+
+    .video__container {
+      @include flex-column;
+      height: 15rem;
+      width: 10rem;
+      max-width: 28%;
+    }
+
+    .video {
+      position: relative;
+      height: 8rem;
+      width: 10rem;
+      background-color: black;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 1300px) {
+        height: 6rem;
+        width: 8rem;
+      }
+
+      @media (max-width: 1110px) {
+        height: 9rem;
+        width: 11rem;
+      }
+
+      .caption {
+        width: 2.5rem;
+        background-color: white;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        font-size: 9px;
+        text-align: center;
+      }
+    }
+
+    .view__more {
+      height: 12rem;
+      width: 10rem;
+      @include flex-column;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: 1700px) {
+        display: none;
+      }
+
+      &:hover {
+        @include link-hover;
+      }
+    }
+  }
+}

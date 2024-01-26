@@ -1,0 +1,13 @@
+@import "components";
+
+.footer {
+  font-size: small;
+  @include flex-row;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 1rem;
+
+  .tag {
+    width: 18rem;
+  }
+}

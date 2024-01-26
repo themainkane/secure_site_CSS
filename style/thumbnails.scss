@@ -1,0 +1,76 @@
+@import "components";
+
+.thumbnails {
+  @include flex-column;
+  justify-content: space-around;
+  height: 80rem;
+  @include standard-padding;
+
+  @media (max-width: 1110px) {
+    display: none;
+  }
+
+  .container {
+    height: 5rem;
+    width: 7rem;
+    border: black solid 2px;
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: $my_aqua;
+      cursor: url("/style/img/icons8-finger-up-48.png"), auto;
+    }
+    .thumbnail {
+      height: 4rem;
+      width: 6rem;
+      background-image: url("/style/img/world.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      &:hover {
+        background-image: url("/style/img/world-white.png");
+      }
+    }
+
+    .family {
+      background-image: url("/style/img/family1.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      &:hover {
+        background-color: $my_aqua;
+        background-image: url("/style/img/family.png");
+        cursor: url("/style/img/icons8-finger-up-48.png"), auto;
+      }
+    }
+
+    .pointer {
+      background-image: url("/style/img/pointer-right.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      &:hover {
+        background-image: url("/style/img/pointer-right.png");
+        background-color: $my_aqua;
+        cursor: url("/style/img/icons8-finger-up-48.png"), auto;
+      }
+    }
+    .trophy {
+      background-image: url("/style/img/trophy.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      &:hover {
+        background-image: url("/style/img/trophy-white.png");
+        background-color: $my_aqua;
+        cursor: url("/style/img/icons8-finger-up-48.png"), auto;
+      }
+    }
+  }
+}

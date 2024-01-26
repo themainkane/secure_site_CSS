@@ -1,0 +1,19 @@
+@import "components";
+
+.main__column {
+  width: 22rem;
+  @include standard-padding;
+  @media (max-width: 1110px) {
+    width: 100%;
+  }
+
+  .bottom {
+    .list {
+      padding-left: 1.5rem;
+
+      .item {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

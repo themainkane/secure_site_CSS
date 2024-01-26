@@ -1,0 +1,118 @@
+@import "components";
+
+.bottom {
+  padding-top: 2rem;
+  width: 100%;
+
+  .headings {
+    @include flex-row();
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+
+    .view__more-arrow {
+      @media (min-width: 1700px) {
+        display: none;
+      }
+    }
+  }
+
+  .videos__container {
+    @include flex-row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media (max-width: 1110px) {
+      @include flex-column;
+    }
+
+    .video__container {
+      @include flex-column();
+      justify-content: space-between;
+      height: 20rem;
+      margin: 1.5rem;
+      width: 20rem;
+
+      @media (max-width: 1110px) {
+        width: 100%;
+      }
+    }
+
+    .video {
+      position: relative;
+      height: 16rem;
+      width: 20rem;
+      background-color: black;
+
+      .caption {
+        width: fit-content;
+        background-color: white;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        padding: 8px;
+      }
+    }
+  }
+
+  .view__more {
+    height: 20rem;
+    width: 22rem;
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      @include link-hover;
+    }
+    @media (max-width: 1700px) {
+      display: none;
+    }
+  }
+  .nav-boxes {
+    @include flex-row;
+    justify-content: space-between;
+
+    img {
+      width: 8%;
+    }
+
+    .top {
+      @include flex-row;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+      height: 3.5rem;
+      border: black solid 2px;
+      padding: 0;
+
+      .content {
+        @include flex-row;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+      }
+    }
+
+    .next {
+      @include flex-row;
+      justify-content: space-around;
+      border: black solid 2px;
+      width: 25%;
+      align-items: center;
+      // padding-left: 1rem;
+
+      img {
+        width: 18%;
+      }
+      .up-next {
+        @include flex-column;
+
+        font-size: 22px;
+
+        .red {
+          color: #993333;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

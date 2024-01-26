@@ -1,0 +1,91 @@
+@import "components";
+
+.header {
+  @include flex-row;
+  justify-content: space-between;
+  @include border-bottom;
+
+  @media (max-width: 1607px) {
+    @include flex-column;
+  }
+  @media (max-width: 1110px) {
+    @include flex-row;
+  }
+  .title {
+    font-size: 32px;
+    @media (max-width: 1607px) {
+      padding-bottom: 2rem;
+    }
+  }
+  .nav {
+    @include flex-row;
+    justify-content: space-between;
+    width: 48rem;
+    @media (max-width: 1110px) {
+      display: none;
+    }
+
+    .img-container {
+      height: 2rem;
+      width: 2rem;
+      background-image: url("/style/img/earth-1303628_640.png");
+      background-size: contain;
+      background-position: center;
+    }
+
+    a {
+      @include flex-column;
+      justify-content: center;
+    }
+
+    .boxed {
+      border: black solid 2px;
+      padding-left: 2%;
+      padding-right: 2%;
+      max-height: 2rem;
+
+      &:hover {
+        background-color: black;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  .burger-menu {
+    @media (min-width: 1110px) {
+      display: none;
+    }
+    .line {
+      width: 35px;
+      height: 5px;
+      background-color: black;
+      margin: 6px 0;
+    }
+  }
+}
+
+.titles {
+  @include flex-row;
+  justify-content: space-between;
+  @include border-bottom;
+  padding-top: 2rem;
+  align-items: center;
+  .title {
+    font-size: 38px;
+    color: $my_aqua;
+  }
+  .title__next {
+    font-size: 18px;
+    color: #993333;
+    width: 15rem;
+    text-align: right;
+    .up-next {
+      font-size: 26px;
+      font-weight: 900;
+      color: black;
+    }
+    &:hover {
+      @include link-hover;
+    }
+  }
+}
